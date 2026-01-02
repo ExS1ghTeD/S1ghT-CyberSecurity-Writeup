@@ -1,0 +1,28 @@
+# Advent of Cyber 2025 Writeup
+
+**Name:** S1ghT (not real name)
+**Date:** January 2, 2025  
+
+---
+
+## Room 2: Phishing - Merry Clickmas
+### Task Description
+This room exercise is about social engineering and phishing, in this case, phishing the password.
+
+### Steps Taken
+1. Firstly, before we begin, we need to start up our attacker and target machine. For the attacker machine, I will be using my own VMWare Kali Linux machine.
+
+
+2. **Tool Used:** I used [Tool Name] to decode the malicious URL.
+3. **Findings:** I discovered that the attacker was trying to...
+
+### Screenshot
+![Description of image](URL_OF_IMAGE_IF_UPLOADED)
+
+### Answer/Conclusion
+The final flag or answer was: `THM{example_flag}`
+
+---
+
+## Exercise 2: [Name of the TryHackMe Room]
+...repeat steps above...
