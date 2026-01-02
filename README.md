@@ -1,2 +1,2 @@
-# Advent-of-Cyber-2025-Writeups-Lab-Exercise
-A writeups of the TryHackMe Advent of Cyber 2025 for the Lab Exercise.
+# S1ghT list of writeups.
+A writeups of every exercise or CTF in cyber security.
