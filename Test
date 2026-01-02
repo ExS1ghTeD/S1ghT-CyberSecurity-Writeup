@@ -1,0 +1,26 @@
+# Advent of Cyber 2025 Writeup
+
+**Name:** S1ghT (not real name)
+**Date:** January 2, 2025  
+
+---
+
+## Room 2: Phishing - Merry Clickmas
+### Task Description
+A brief summary of what the exercise was about (e.g., Phishing analysis, Social Engineering tactics).
+
+### Steps Taken
+1. **Initial Analysis:** I started by looking at the email headers...
+2. **Tool Used:** I used [Tool Name] to decode the malicious URL.
+3. **Findings:** I discovered that the attacker was trying to...
+
+### Screenshot
+![Description of image](URL_OF_IMAGE_IF_UPLOADED)
+
+### Answer/Conclusion
+The final flag or answer was: `THM{example_flag}`
+
+---
+
+## Exercise 2: [Name of the TryHackMe Room]
+...repeat steps above...
