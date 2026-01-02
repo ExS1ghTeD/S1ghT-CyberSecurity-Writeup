@@ -9,21 +9,104 @@
 ### Task Description
 This room exercise is about social engineering and phishing, in this case, phishing the password.
 
+**Tool Used:**
+- Kali Linux
+- setoolkit
+
 ### Steps Taken
 1. Firstly, before we begin, we need to start up our attacker and target machine. For the attacker machine, I will be using my own VMWare Kali Linux machine.
-Merry Clickmas Media/1.png
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/1.png
 
+2. Download the Task Files of the exercise, move it to your attack machine and extract it in your disegnated directory. Then, on the same directory, run './server.py' on the terminal.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/2.png
 
-2. **Tool Used:** I used [Tool Name] to decode the malicious URL.
-3. **Findings:** I discovered that the attacker was trying to...
+3. Open your browser, type 'http://127.0.0.1:8000' on the search bar. Then enter. You will meet this phishing page.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/3.png
 
-### Screenshot
-![Description of image](URL_OF_IMAGE_IF_UPLOADED)
+4. Now, our phishing website has been set. Open your new terminal and type 'setoolkit'. Press enter then you will meet this agreement. Take time to read it entire agreement. If you agree, press 'y'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/4.png
+
+5. After agreeing, you will meet the setoolkit interface. Select 1 from the menu.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/5.png
+
+6. From the menu, select number 5.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/6.png
+
+7. For the social engineer toolkit mass e-mailer options, pick number 1.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/7.png
+
+8. For the template, pick number 2.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/8.png
+
+9. For the subject of the email, type 'Shipping Schedule Changes'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/9.png
+
+10. For the message, we will choose plain. Type 'p'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/10.png
+
+11. Before we go further, open up a new terminal and type 'ifconfig'. You will need your IP for the phishing link later. In this case, my IP was 192.168.161.180 at tun0 interface.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/10_1.png
+
+12. For the phishing email, type like the following:
+[!] IMPORTANT: When finished, type END (all capital) then hit {return} on a new line.
+set:phishing> Enter the body of the message, type END (capitals) when finished:Dear elves, 
+Next line of the body: Kindly note that there have been significant changes to the shipping schedules due to increased shipping orders.
+Next line of the body: Please confirm the new schedule by visiting http://your_IP:8000
+Next line of the body: Best regards,
+Next line of the body: Flying Deer
+Next line of the body: END
+
+Note: Replaced the IP with your IP address.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/11.png
+
+13. Send the email to 'factory@wareville.thm'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/12.png
+
+14. Use your own server or open relay.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/13.png
+
+15. For the FROM NAME, type 'Deer Shipping'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/14.png
+
+16. For the opne-relay username and password, leave it as blank.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/15.png
+
+17. We will attack the victim SMTP email server. Type '10.48.163.177' (or your victim machine IP).
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/16.png
+
+18. We will use port 25 for the SMTP server.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/17.png
+
+19. We can set the email as priority or not. Usually, it is based on the victim. But for this, we will set it as a no.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/18.png
+
+20. We will not attach any file or an inline file. Press 'n' for both.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/19.png
+
+21. After we have done the phishing email we can press 'Enter'.
+
+22. Now, go back to the terminal where you run your website. In there, you will see if the victim has enter their username and password. (it may take 1-2 minutes to appear)
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/20.png
+
+23. We finally got the password from our victim. We can copy and enter it to the THM website to continue our progress.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/21.png
+
+24. Go to the terget machine's IP (which is 10.48.163.177 for my case) on the browser. Set the username as 'factory' and the password from the one we get from phishing.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/22.png
+
+25. After we have access the website, we can see the victim's email. We can search for any important stuff in there, such as the numbers of ship toys.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/23.png
+
+26. We can enter the numbers or ship toys on the THM website.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/24.png
+
+27. Congratulation, you have successfully complete this room.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/Merry%20Clickmas%20Media/25.png
+
 
 ### Answer/Conclusion
-The final flag or answer was: `THM{example_flag}`
+The flags for this room:
 
----
+- unranked-wisdom-anthem
+- 1984000
 
-## Exercise 2: [Name of the TryHackMe Room]
-...repeat steps above...
