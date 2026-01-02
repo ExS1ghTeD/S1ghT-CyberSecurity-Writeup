@@ -11,6 +11,7 @@ This room exercise is about social engineering and phishing, in this case, phish
 
 ### Steps Taken
 1. Firstly, before we begin, we need to start up our attacker and target machine. For the attacker machine, I will be using my own VMWare Kali Linux machine.
+Merry Clickmas Media/1.png
 
 
 2. **Tool Used:** I used [Tool Name] to decode the malicious URL.
