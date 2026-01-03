@@ -10,140 +10,143 @@
 This room exercise is about identifying and analyzing a malicious phishing email.
 
 **Tool Used:**
-- Kali Linux
-- 
+- Text editor
+- Web browser
+- Email app
 
 ### Steps Taken
 1. For this task, you did not need to open your Kali Linux (or other VMs). Just do it in your current PC.
 
 1. On Task 1, read the introdcution of the room. After done reading, you can proceed by pressing the 'Check' button without entering any answer.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/1.png
 
 2. On Task 2, download the task file and open the file using Microsoft Outlook.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/2.png
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/2.1.png
 
 3. After opening, you should see an email inbox from Parrot Post Webmail. After that, press the 'Check' button on the THM website.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/3.png
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/3.1.png
 
 4. After done viewing the email, go back to the downloaded .eml file and open it with your own text editor. In my case, i will open it in VSCode.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/4.png
 
 5. On your text editor, you should see many lines of text. The texts are the email's content and the email header, which you cannot see it with a normal email app.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/6.png
 
 6. For the first question on Task 3, you need to find the sender's IP address that can be found inside the email header, which in this case is 109.205.120.0 .
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/7.png
 
 7. After we know the IP, go to the internet and search for 'IP address lookup'. Pick any website you want, in my case is 'https://whatismyipaddress.com/ip-lookup'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/8.png
 
 8. We will get the IP details of the sender, 109.205.120. After we hit search, we now know the metadata of the IP. The sender are from Latvia.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/9.png
 
 9. Answer the first question by typing 'Latvia'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/10.png
 
 10. Now for the second question, to find where the replied email sent to, we need to look again at the email, specifically at the Reply-To header. in this case is 'no-reply@postparr0t.thm'. It's a classic phishing tactic that change a certain letters to numbers for the link or the email.
-
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/11.png
 
 11. For the third question of the Task 3, the answer of it can be found at the header of the email, two lines below the 'From:' line, that is 'X-Custom-Header: THM{y0u_f0und_7h3_h34d3r}'. Fill the answer of it at the third question.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/12.png
 
 12. For the Task 4, you need to download the task file. Reminder, the antivirus software will flag it as a malware. Do not panic. In this case, either you turn off the antivirus (not recommended) or allow that specific file to run (recomendded).
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/13.png
 
 13. After downloaded the file, open it with your favourite text editor, in this case, I still be using VSCode.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/14.png
 
 14. You can see the long Base64 text that contains in this file. Copy all of the Base64 text. Make sure only take the text and not the remaining text available before and after the text.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/15.png
 
 15. Go to internet and search for 'base64 converter'. Pick any of the website, in my case is 'https://www.base64decode.org/'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/16.png
 
 16. Paste the copied text into the space and press 'DECODE'. You will see the results when you able to read the decode text.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/17.png
 
 17. Now we can answer the Task 4 questions. The asnwer for first question is 'base64'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/18.png
 
 18. The answer for the second question is 'atob()'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/19.png
 
 19. For the third question, we need to view back the decode Base64 text. To find the comment of the hmtl, it is usually start with '<!--'. To ease our search, just press 'Ctrl+F' then type the '<!--'. You will find the one like this: <!-- VEhNe2QwdWJsM18zbmMwZDNkfQo= -->.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/20.png
 
 20. That text was in Base64. We need to convert into UTF-8 (readable format). We convert 'VEhNe2QwdWJsM18zbmMwZDNkfQo=' and we will get 'THM{d0ubl3_3nc0d3d}'. Answer it on that third question.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/21.png
 
-
-21. After that, copy all of the decoded base64 and paste it into a notepad. Save it as 'decode_webpage.html'.
-
+21. After that, copy all of the decoded base64 and paste it into a notepad. Save it as 'decoded_webpage.html'.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/22.png
 
 22. Now we are in Task 5. This task is about decoding the HTML entity. HMTL entity is a trick that the author of this file is using to throw us off. HTML entities are special sequences of characters used to represent reserved characters and other special characters in HTML.
 
 23. For this task, we need to go to the internet and search for 'HMTL entity decoder'. Pick any website you want, in this case, i will be using 'https://appdevtools.com/html-entity-encoder-decoder'. 
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/23.png
 
 23. From the decoded base64 that we have made, open it in your text editor, in there, copy from <h1> tag until </form>.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/24.png
 
 24. Paste it into that HTML entity decoder website, and decode it.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/25.png
 
 25. Copy the decoded html entity and replaced it to the place where we copy the html entity on 'decoded_webpage.html'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/26.png
 
 26. The answer for the question in Task 5 is 'ParrotPost Secure Webmail Login'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/27.png
 
 27. Next we move to Task 6, where we will learn about CSS. The answer for Task 6 question is 'CSS Beautify'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/28.png
 
 28. For the Task 7, we need to open a website 'https://beautifier.io/'. This can convert from minified JavaScript to beutified JavaScript, which will make it easier for us to read.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/29.png
 
 29. In the 'decoded_webpage.html', copy everything between the opening <script> and closing </script> tags.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/30.png
 
 30. Paste it into the website anc click Beautify Code.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/31.png
 
 31. With this information, we can now answer the questions in this task. First answer is 'http://evilparrot.thm:8080/cred-capture.php' and the second one is 'window.location.href'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/32.png
 
 32. For the Task 8, you need to start a machine that THM give at their website.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/33.png
 
 33. In the VM, right click the 'ParrotPostACTIONREQUIRED.htm' and open it with Firefox.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/34.png
 
 34. You will meet the Parrot Post Secure Webmail Login page.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/35.png
 
 35. Put a fake credentials at the page. For the email, we will put test@test.com and test for the password. Then press 'Login'. We will noticed that the website returns an error message claiming an error processing our login request. This is entirely fake because the attacker will use this to ease suspicion.
 
 36. Right click the page and inspect it. Go to the Network tab.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/36.png
 
 37. For something to appear, just re-click the login button, and the GET request should appear.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/37.png
 
 38. Click on that GET request. From here, we should be able to see every details of this request like what domain does it went, what parameters does it use and so on.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/38.png
 
 39. For the first and second questions in this task, the answer are available in the 'Response' tab. First answer is 'THM{c4p7ur3d_y0ur_cr3d5}' and the second one is '/creds.txt'.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/39.png
 
 40. For the last question, you need copy the link inside of the 'Response' tab, which is http://evilparrot.thm:8080/creds.txt , paste it on the browser. It should redirect you to the logs of victims' email and password.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/40.png
 
 41. Find the Chris Smith's password, in this case was 'FlyL1ke!A~Bird'. Paste it into the answer box of the last question.
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/41.png
 
 42. For the Task 9, just click that 'Check' button.
 
 43. Congratulation! You have completed the room.
-
+https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/blob/main/ParrotPost%20Phishing%20Analysis%20Media/42.png
 
 
 
