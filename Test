@@ -1,0 +1,66 @@
+# THM Walkthrough Writeup: Social Engineering
+
+**Name:** S1ghT  
+**Date:** January 3, 2025  
+
+---
+
+## Room: ParrotPost: Phishing Analysis
+### Task Description
+This room focuses on identifying and analyzing a malicious phishing email, investigating headers, and deobfuscating malicious code used in a credential harvesting attack.
+
+**Tools Used:**
+- VS Code (Text Editor)
+- Web Browser
+- Online IP Lookup & Base64 Decoders
+- HTML Entity & JS Beautifier Tools
+
+---
+
+### Phase 1: Initial Investigation
+1. **Room Introduction:** I began by reviewing the introduction to understand the context of the phishing attack.  
+![Task 1](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/1.png)
+
+2. **Email Inspection:** I downloaded the task file and opened it using Microsoft Outlook to view the email from a victim's perspective. It appears to be a standard inbox notification from Parrot Post Webmail.  
+![Task 2](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/2.png)
+![Task 2.1](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/2.1.png)
+
+---
+
+### Phase 2: Email Header Analysis
+3. **Analyzing the Source Code:** To see the hidden metadata, I opened the `.eml` file in **VS Code**. This reveals the email headers which are typically hidden by standard mail clients.  
+![Header Analysis](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/6.png)
+
+4. **Tracking the Sender:** I identified the sender's IP address as `109.205.120.0`. By using an IP lookup tool, I discovered the origin of the IP is **Latvia**.  
+![IP Lookup](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/9.png)
+
+5. **Identifying Phishing Tactics:** I checked the `Reply-To` header and found `no-reply@postparr0t.thm`. Note the use of the number `0` instead of the letter `o`—a classic typo-squatting tactic. I also found a hidden flag in a custom header: `THM{y0u_f0und_7h3_h34d3r}`.  
+![Phishing Logic](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/11.png)
+
+---
+
+### Phase 3: Deobfuscating the Malicious Webpage
+6. **Base64 Decoding:** The malicious attachment contained a long string of Base64 code. I used an online decoder to reveal the underlying HTML structure.  
+![Base64 Decode](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/17.png)
+
+7. **Double Encoding:** Inside the decoded HTML, I found a hidden comment: ``. Decoding this second layer revealed the flag: `THM{d0ubl3_3nc0d3d}`.  
+![Double Encoding](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/21.png)
+
+8. **HTML Entities:** The attacker used HTML entities to hide the page title. After using a decoder, the title was revealed as: **ParrotPost Secure Webmail Login**.  
+![HTML Entity](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/25.png)
+
+---
+
+### Phase 4: JavaScript Analysis & Credential Harvesting
+9. **Beautifying Code:** The JavaScript in the file was minified (hard to read). I used `beautifier.io` to clean the code, revealing the attacker's "Credential Capture" URL: `http://evilparrot.thm:8080/cred-capture.php`.  
+![JS Beautify](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/31.png)
+
+10. **Intercepting Traffic:** Using the browser's **Network Tab**, I monitored the POST request sent when a user attempts to login. This confirmed that the credentials were being sent to the attacker's server.  
+![Network Tab](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/38.png)
+
+11. **Final Flag:** By accessing the attacker's log file at `/creds.txt`, I recovered the captured credentials and the final flag: `THM{c4p7ur3d_y0ur_cr3d5}`.  
+![Creds Found](https://github.com/ExS1ghTeD/S1ghT-CyberSecurity-Writeup/raw/main/ParrotPost%20Phishing%20Analysis%20Media/41.png)
+
+---
+### Conclusion
+This exercise successfully demonstrated how attackers use obfuscation (Base64, HTML Entities, and Minified JS) to bypass security filters and deceive users into providing sensitive credentials.
